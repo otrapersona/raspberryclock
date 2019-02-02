@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# installing requirements
+echo "installing requirements"
+
+sudo apt-get update
+sudo apt-get install -y weather-util watch figlet screen toilet
+
+# creating folder ~/opt/bin
+echo "creating folder ~/opt/bin"
+
+mkdir -p ~/opt/bin/
+
+# creating orange (AKA clock)
+echo "creating orange (AKA clock)"
+
+echo '''#!/bin/bash
+watch -txpcn30 /home/pi/opt/bin/gears''' > ~/opt/bin/orange
+chmod +x ~/opt/bin/orange
+
+# adding clockwork (configured for a 80x24 screen, CDMX weather)
+echo "adding clockwork"
+
+echo '''#!/bin/bash
+echo -e "\n\n\n"
+echo -e $(date "+%H:%M")"      "$(weather MMMX --headers=temperature -m -q --no-cache|tr -d "Temperature:  C ")"° C"|figlet -kc -w 80 -C utf8
+date "+%A%n%x"|figlet -kc -w 80 -C utf8''' > ~/opt/bin/gears
+chmod +x ~/opt/bin/gears
+
+# add this to the bottom of .bashrc, it'll start a screen called "clockscreen" if there's no screen called that
+# after that it'll run "orange" if there's no process called that (used to be called clock but there are a lot already)
+echo "creating autostart conditions"
+
+echo '''
+if ! screen -list | grep -q "clockscreen"; then
+        if ! ps -C orange|tr -dC orange|grep -q "orange"; then
+        screen -S clockscreen -s ~/opt/bin/orange
+        fi
+fi''' >> ~/.bashrc
+
+# suggesting the a console font
+echo "Figlet was tweaked with the 6x12 console font, if something doesn't look right, may want to give it a try by running the command 'sudo 
+dpkg-reconfigure console-setup'"
