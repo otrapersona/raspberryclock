@@ -1,5 +1,5 @@
 # raspberryclock
-raspberrypi + 80x24 terminal screen = clock
+raspberrypi + 80x24 screen= clock
 
 It looks like this but much prettier
 ```
