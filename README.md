@@ -1,7 +1,7 @@
 # raspberryclock
 raspberrypi + 80x24 screen= clock
 
-It looks like this but much prettier
+It looks like this but prettier
 ```
                ____   _____    _  _        _  _  _    __     ____
               |___ \ |___ / _ / |/ |      / || || |  /  \   / ___|
