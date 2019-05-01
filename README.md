@@ -39,7 +39,7 @@ chmod +x raspberryclock
 ./raspberryclock
 ```
 
-###Best method
+### Best method
 
 Follow your heart
 
