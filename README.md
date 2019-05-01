@@ -45,9 +45,9 @@ Follow your heart
 
 ## Uninstall instructions:
 
--Delete "clockwork" and "orange" from ~/opt/bin
+- Delete "clockwork" and "orange" from ~/opt/bin
 
--Delete the following lines from .bashrc
+- Delete the following lines from .bashrc
 
 ```bash
 if ! screen -list | grep -q "clockscreen"; then
@@ -57,4 +57,4 @@ if ! screen -list | grep -q "clockscreen"; then
 fi
 ```
 
--Remove dependencies you no longer need<br>(weather-util, watch, figlet, screen, toilet)
+- Remove dependencies you no longer need<br>    (weather-util, watch, figlet, screen, toilet)
