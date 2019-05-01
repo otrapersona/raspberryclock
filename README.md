@@ -1,7 +1,9 @@
 # raspberryclock
+
 raspberrypi + 80x24 screen= clock
 
 It looks like this but prettier
+
 ```
                ____   _____    _  _        _  _  _    __     ____
               |___ \ |___ / _ / |/ |      / || || |  /  \   / ___|
@@ -23,28 +25,40 @@ It looks like this but prettier
 
 ```
 
-# Install instructions:<br />
--Easiest method<br />
+## Install instructions:
+
+### Easiest method
+
 As the user "pi" which must be configured to autologin to cli insert these spooky commands
-  ```
-  sudo apt-get install git -y
-  git clone https://github.com/otrapersona/raspberryclock
-  cd raspberryclock
-  chmod +x raspberryclock
-  ./raspberryclock
-  ```
--Best method<br />
+
+```bash
+
+sudo apt-get install git -y
+git clone https://github.com/otrapersona/raspberryclock
+cd raspberryclock
+chmod +x raspberryclock
+./raspberryclock
+
+```
+
+###Best method
+
 Follow your heart
 
-# Uninstall instructions:<br />
--Delete "clockwork" and "orange" from ~/opt/bin<br />
--Delete the following lines from .bashrc<br />
-```
+## Uninstall instructions:
+
+-Delete "clockwork" and "orange" from ~/opt/bin
+
+-Delete the following lines from .bashrc
+
+```bash
+
 if ! screen -list | grep -q "clockscreen"; then
 	if ! ps -C orange|tr -dC orange|grep -q "orange"; then
 	screen -S clockscreen -s ~/opt/bin/orange
 	fi
 fi
+
 ```
--Remove dependencies you no longer need<br />
-(weather-util, watch, figlet, screen, toilet)
+
+-Remove dependencies you no longer need<br>(weather-util, watch, figlet, screen, toilet)
