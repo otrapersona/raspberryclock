@@ -31,7 +31,7 @@ It looks like this but prettier
 
 As the user "pi" which must be configured to autologin to cli insert these spooky commands
 
-```bash
+```bash $
 sudo apt-get install git -y
 git clone https://github.com/otrapersona/raspberryclock
 cd raspberryclock
