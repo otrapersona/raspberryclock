@@ -1,5 +1,4 @@
 # raspberryclock
-
 raspberrypi + 80x24 screen= clock
 
 It looks like this but prettier
@@ -31,12 +30,17 @@ It looks like this but prettier
 
 As the user "pi" which must be configured to autologin to cli insert these spooky commands
 
-```bash $
-sudo apt-get install git -y
+``` sh
 git clone https://github.com/otrapersona/raspberryclock
 cd raspberryclock
 chmod +x raspberryclock
 ./raspberryclock
+```
+
+If it fails, you might not have git installed, in that case you need to insert the following
+
+``` sh
+sudo apt-get install git -y
 ```
 
 ### Best method
@@ -46,13 +50,18 @@ Follow your heart
 ## Uninstall instructions:
 
 1. Delete "clockwork" and "orange" from ~/opt/bin
+
 2. Delete the following lines from .bashrc
 
-```bash
+``` sh
 if ! screen -list | grep -q "clockscreen"; then
 	if ! ps -C orange|tr -dC orange|grep -q "orange"; then
 	screen -S clockscreen -s ~/opt/bin/orange
 	fi
 fi
 ```
-3. Remove dependencies you no longer need<br>    (weather-util, watch, figlet, screen, toilet)
+
+3. Remove dependencies you no longer need        
+      (weather-util, watch, figlet, screen, toilet)
+
+> note from Matus: I just reviewed the code, it works but it's kind of a mess from the time I knew a little bit less about bash scripting, take it as a base for your project and not as a completed "product".
