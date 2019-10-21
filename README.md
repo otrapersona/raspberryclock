@@ -1,4 +1,6 @@
 # raspberryclock
+> note from Matus: I just reviewed the code, it works but it's kind of a mess from the time I knew much less, take it as inspiration at best.
+
 raspberrypi + 80x24 screen= clock
 
 It looks like this but prettier
@@ -63,5 +65,3 @@ fi
 
 3. Remove dependencies you no longer need        
       (weather-util, watch, figlet, screen, toilet)
-
-> note from Matus: I just reviewed the code, it works but it's kind of a mess from the time I knew a little bit less about bash scripting, take it as a base for your project and not as a completed "product".
